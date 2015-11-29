@@ -4,19 +4,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/route_fragment"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@mipmap/ic_routes"
             android:title="Routes" />
         <item
             android:id="@+id/track_fragment"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_track"
             android:title="Track Teacher" />
         <item
             android:id="@+id/chat_fragment"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_chat"
             android:title="Chat" />
         <item
             android:id="@+id/dean_fragment"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_ask_dean"
             android:title="Ask Dean" />
     </group>
 
@@ -24,7 +24,7 @@
         <menu>
             <item
                 android:id="@+id/contacts_fragment"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_phonebook"
                 android:title="Phone Book" />
         </menu>
     </item>

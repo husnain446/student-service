@@ -5,95 +5,69 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.byteshaft.studentservice.fragment.ChatFragment;
-import com.byteshaft.studentservice.fragment.ContactsFragment;
-import com.byteshaft.studentservice.fragment.DeanFragment;
 import com.byteshaft.studentservice.fragment.RouteFragment;
 import com.byteshaft.studentservice.fragment.TrackFragment;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawer;
+    private Class fragmentClass;
+    private Fragment fragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-        tx.replace(R.id.container, new RouteFragment());
-        tx.commit();
+        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.commit();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        System.out.println("okay");
-                        selectDrawerItem(menuItem);
-                        drawer.closeDrawers();
-                        return true;
-                    }
-                });
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                System.out.println("okay");
+                selectDrawerItem(item);
+                return true;
+            }
+        });
     }
 
     private void selectDrawerItem(MenuItem menuItem) {
-
-        Fragment fragment = null;
-
         switch (menuItem.getItemId()) {
             case R.id.route_fragment:
-                Class fragmentClass = RouteFragment.class;
+                fragmentClass = RouteFragment.class;
                 break;
             case R.id.track_fragment:
                 fragmentClass = TrackFragment.class;
                 break;
-            case R.id.chat_fragment:
-                fragmentClass = ChatFragment.class;
-                break;
-            case R.id.dean_fragment:
-                fragmentClass = DeanFragment.class;
-                break;
-            case R.id.contacts_fragment:
-                fragmentClass = ContactsFragment.class;
-                default:
-                    fragmentClass = RouteFragment.class;
-                try {
-                    fragment = (Fragment) fragmentClass.newInstance();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                menuItem.setChecked(true);
-                setTitle(menuItem.getTitle());
-                drawer.closeDrawers();
+            default:
+                fragmentClass = RouteFragment.class;
         }
-    }
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        @Override
-        public void onBackPressed () {
-            if (drawer.isDrawerOpen(GravityCompat.START)) {
-            } else {
-                super.onBackPressed();
-            }
-        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        menuItem.setChecked(true);
+        setTitle(menuItem.getTitle());
+        drawer.closeDrawers();
     }
+}
