@@ -37,6 +37,7 @@ public class RouteFragment extends Fragment {
                 LatLng sydney = new LatLng(-34, 151);
                 mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in this! ===>>"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(-34, 151), 12.0f));
             }
         });
         return mBaseView;
