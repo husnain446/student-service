@@ -18,15 +18,9 @@
             android:id="@+id/dean_fragment"
             android:icon="@drawable/ic_ask_dean"
             android:title="Ask Dean" />
+        <item
+            android:id="@+id/contacts_fragment"
+            android:icon="@drawable/ic_phonebook"
+            android:title="Phone Book" />
     </group>
-
-    <item android:title="Contact">
-        <menu>
-            <item
-                android:id="@+id/contacts_fragment"
-                android:icon="@drawable/ic_phonebook"
-                android:title="Phone Book" />
-        </menu>
-    </item>
-
 </menu>

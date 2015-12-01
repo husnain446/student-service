@@ -10,7 +10,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ListView;
 
+import com.byteshaft.studentservice.fragment.ChatFragment;
+import com.byteshaft.studentservice.fragment.ContactsFragment;
+import com.byteshaft.studentservice.fragment.DeanFragment;
 import com.byteshaft.studentservice.fragment.RouteFragment;
 import com.byteshaft.studentservice.fragment.TrackFragment;
 
@@ -54,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.track_fragment:
                 fragmentClass = TrackFragment.class;
+                break;
+            case R.id.chat_fragment:
+                fragmentClass = ChatFragment.class;
+                break;
+            case R.id.dean_fragment:
+                fragmentClass = DeanFragment.class;
+                break;
+            case R.id.contacts_fragment:
+                fragmentClass = ContactsFragment.class;
                 break;
             default:
                 fragmentClass = RouteFragment.class;
