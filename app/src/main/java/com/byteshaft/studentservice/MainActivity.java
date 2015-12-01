@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.container_main, fragment).commit();
             }
-        }, 300);
+        }, 340);
 
         menuItem.setChecked(true);
         setTitle(menuItem.getTitle());
