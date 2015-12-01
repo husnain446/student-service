@@ -2,6 +2,7 @@ package com.byteshaft.studentservice;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 import com.byteshaft.studentservice.fragment.ChatFragment;
 import com.byteshaft.studentservice.fragment.ContactsFragment;
@@ -77,8 +77,14 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.container_main, fragment).commit();
+            }
+        }, 300);
+
         menuItem.setChecked(true);
         setTitle(menuItem.getTitle());
         drawer.closeDrawers();
