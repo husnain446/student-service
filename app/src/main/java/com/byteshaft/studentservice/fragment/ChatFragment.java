@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.byteshaft.studentservice.AppG;
+import com.byteshaft.studentservice.AppGlobals;
 import com.byteshaft.studentservice.R;
 
 
@@ -63,7 +63,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
             // Apparently no table exists.
         }
 
-        adapter = new ChatArrayAdapter(AppG.getContext(), R.layout.singlemessage_chat, messages);
+        adapter = new ChatArrayAdapter(AppGlobals.getContext(), R.layout.singlemessage_chat, messages);
         bubbleList.setAdapter(adapter);
     }
 
