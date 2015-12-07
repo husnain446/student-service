@@ -12,10 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.byteshaft.studentservice.fragment.ChatFragment;
+import com.byteshaft.studentservice.fragment.ScheduleFragment;
+import com.byteshaft.studentservice.fragment.CommunicateFragment;
 import com.byteshaft.studentservice.fragment.ContactsFragment;
 import com.byteshaft.studentservice.fragment.DeanFragment;
-import com.byteshaft.studentservice.fragment.RouteFragment;
+import com.byteshaft.studentservice.fragment.SocialMediaFragment;
 import com.byteshaft.studentservice.fragment.TrackFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,23 +54,26 @@ public class MainActivity extends AppCompatActivity {
 
     private void selectDrawerItem(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case R.id.route_fragment:
-                fragmentClass = RouteFragment.class;
+            case R.id.communicate_fragment:
+                fragmentClass = CommunicateFragment.class;
                 break;
             case R.id.track_fragment:
                 fragmentClass = TrackFragment.class;
                 break;
             case R.id.chat_fragment:
-                fragmentClass = ChatFragment.class;
+                fragmentClass = ScheduleFragment.class;
                 break;
             case R.id.dean_fragment:
                 fragmentClass = DeanFragment.class;
                 break;
-            case R.id.contacts_fragment:
+            case R.id.phonebook_fragment:
                 fragmentClass = ContactsFragment.class;
                 break;
+            case R.id.social_media_fragment:
+                fragmentClass = SocialMediaFragment.class;
+                break;
             default:
-                fragmentClass = RouteFragment.class;
+                fragmentClass = CommunicateFragment.class;
         }
         try {
             fragment = (Fragment) fragmentClass.newInstance();

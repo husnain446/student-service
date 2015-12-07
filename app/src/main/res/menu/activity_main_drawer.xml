@@ -3,24 +3,28 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/route_fragment"
-            android:icon="@mipmap/ic_routes"
-            android:title="Routes" />
+            android:id="@+id/communicate_fragment"
+            android:icon="@drawable/ic_communicate"
+            android:title="Communicate with Classmates" />
         <item
-            android:id="@+id/track_fragment"
-            android:icon="@drawable/ic_track"
-            android:title="Track Teacher" />
+            android:id="@+id/phonebook_fragment"
+            android:icon="@drawable/ic_phonebook"
+            android:title="View Phonebook" />
         <item
             android:id="@+id/chat_fragment"
-            android:icon="@drawable/ic_chat"
-            android:title="Chat" />
+            android:icon="@drawable/ic_calendar"
+            android:title="Set Schedule" />
         <item
             android:id="@+id/dean_fragment"
             android:icon="@drawable/ic_ask_dean"
             android:title="Ask Dean" />
         <item
-            android:id="@+id/contacts_fragment"
-            android:icon="@drawable/ic_phonebook"
-            android:title="Phone Book" />
+            android:id="@+id/track_fragment"
+            android:icon="@drawable/ic_track"
+            android:title="Track Doctor" />
+        <item
+            android:id="@+id/social_media_fragment"
+            android:icon="@drawable/ic_facebook"
+            android:title="View Socialmedia"/>
     </group>
 </menu>
