@@ -70,7 +70,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 login();
                 break;
             case R.id.forget_password:
-                Intent intent = new Intent(AppGlobals.getContext(), ForgetPasswordActivity.class);
+                Intent intent = new Intent(AppGlobals.getContext(), EmailActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
-        android:paddingTop="14dp">
+        android:paddingTop="140dp">
 
         <!--<ImageView-->
             <!--android:layout_width="wrap_content"-->
@@ -27,24 +27,26 @@
             <EditText
                 android:id="@+id/et_username_login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:hint="Username"
                 android:maxLength="10"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
                 android:inputType="textEmailAddress" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp">
 
             <EditText
                 android:id="@+id/et_password_login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:hint="Password"
-
+                android:background="@android:drawable/editbox_dropdown_light_frame"
                 android:maxLength="10"
                 android:inputType="textPassword" />
         </android.support.design.widget.TextInputLayout>
@@ -52,7 +54,7 @@
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
             android:padding="12dp"
